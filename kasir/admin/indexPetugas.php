@@ -29,6 +29,8 @@ if(empty($_SESSION['username'])) {
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
     <style>
         .text-hero {
@@ -59,8 +61,8 @@ if(empty($_SESSION['username'])) {
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="indexAdmin.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link" href="indexPetugas.php">
+                <i class="fa-solid fa-house"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -75,24 +77,24 @@ if(empty($_SESSION['username'])) {
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="dataPelanggan.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fa-solid fa-person"></i>
                     <span>Data Pelanggan</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="dataPenjualan.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fa-solid fa-chart-simple"></i>
                     <span>Data Penjualan</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="dataProduk.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-couch"></i>
                     <span>Data Produk</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php"">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-right-from-bracket"></i>
                     <span>Logout</span></a>
             </li>
 

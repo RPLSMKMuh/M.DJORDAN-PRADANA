@@ -26,6 +26,9 @@ $pelanggan = query("SELECT*FROM pelanggan");
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 </head>
 
@@ -39,10 +42,7 @@ $pelanggan = query("SELECT*FROM pelanggan");
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Sofa Dreamland</div>
             </a>
 
             <!-- Divider -->
@@ -50,8 +50,8 @@ $pelanggan = query("SELECT*FROM pelanggan");
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="indexAdmin.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link" href="indexPetugas.php">
+                <i class="fa-solid fa-house"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -66,19 +66,27 @@ $pelanggan = query("SELECT*FROM pelanggan");
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="dataPelanggan.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fa-solid fa-person"></i>
                     <span>Data Pelanggan</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="dataPenjualan.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fa-solid fa-chart-simple"></i>
                     <span>Data Penjualan</span></a>
             </li>
+
+            <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="dataProduk.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fa-solid fa-couch"></i>
                     <span>Data Produk</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php"">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

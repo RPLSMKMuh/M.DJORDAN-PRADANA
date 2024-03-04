@@ -8,7 +8,7 @@ $profile = query("SELECT*FROM pelanggan WHERE idPelanggan = $id")[0];
 if(isset($_POST['ubah'])) {
     if(editPelanggan($_POST) > 0) {
         echo "<script>alert('Data berhasil diubah!!');</script>";
-        header('Location: dataPelanggan.php');
+        echo "<script>window.location.href='dataPelanggan.php';</script>";
     }
 }
 
@@ -36,6 +36,9 @@ if(isset($_POST['ubah'])) {
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
 </head>
 
 <body id="page-top">
@@ -47,11 +50,9 @@ if(isset($_POST['ubah'])) {
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
+                     <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Sofa Dreamland</div>
             </a>
 
 
@@ -67,7 +68,7 @@ if(isset($_POST['ubah'])) {
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="dataPelanggan.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-person"></i>
                     <span>Data Pelanggan</span></a>
             </li>
 

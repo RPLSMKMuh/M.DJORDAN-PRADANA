@@ -2,7 +2,7 @@
 
 include '../fungsi.php';
 
-$produk = query("SELECT*FROM penjualan INNER JOIN produk");
+$produk = query("SELECT*FROM penjualan");
 
 ?>
 
@@ -53,6 +53,7 @@ $produk = query("SELECT*FROM penjualan INNER JOIN produk");
                 <!-- End of Topbar -->
                 <div class="container-fluid">
                 <!-- Begin Page Content -->
+                <h2>Laporan penjualan <?= date('Y-m-d') ?></h2>
                     <table class="table table-hover align-middle">
                         <thead>
                             <th>No.</th>
@@ -99,7 +100,7 @@ $produk = query("SELECT*FROM penjualan INNER JOIN produk");
                 </div>
             </footer>
             <!-- End of Footer -->
-                        </div>
+            </div>
         </div>
         <!-- End of Content Wrapper -->
     </div>

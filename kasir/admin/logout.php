@@ -1,4 +1,4 @@
 <?php 
-header('Location: loginAdmin.php');
+header('Location: ../loginAdmin.php');
 exit;
 ?>

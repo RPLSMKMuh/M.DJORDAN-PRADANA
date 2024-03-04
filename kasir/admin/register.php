@@ -5,6 +5,7 @@ include '../fungsi.php';
 if(isset($_POST['register'])) {
     if(regist($_POST) > 0) {
         echo "<script>alert('Registrasi berhasil!!');</script>";
+        echo "<script>window.location.href='../loginAdmin.php';</script>";
     }
 }
 
@@ -38,13 +39,14 @@ if(isset($_POST['register'])) {
 <body class="bg-gradient-primary">
 
     <div class="container">
+        <div class="row justify-content-center">
+    <div class="col-xl-6 col-lg-12 col-md-9">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-                    <div class="col-lg-7">
+                    <div class="col-lg-12">
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
@@ -68,16 +70,22 @@ if(isset($_POST['register'])) {
                                             id="exampleRepeatPassword" placeholder="Repeat Password" name="password2">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user"
+                                        placeholder="admin/petugas" name="level">
+                                </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block" name="register">Login</button>
                                 <hr>
                                
                             </form>
                             <div class="text-center">
-                                <a class="small" href="loginAdmin.php">Already have an account? Login!</a>
+                                <a class="small" href="../loginAdmin.php">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
+</div>
             </div>
         </div>
 

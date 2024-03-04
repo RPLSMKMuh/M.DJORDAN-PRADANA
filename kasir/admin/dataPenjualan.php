@@ -21,12 +21,15 @@ $produk = query("SELECT*FROM penjualan");
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+      <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 </head>
 
@@ -39,11 +42,9 @@ $produk = query("SELECT*FROM penjualan");
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
+                        <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Sofa Dreamland</div>
             </a>
 
             <!-- Divider -->
@@ -51,8 +52,8 @@ $produk = query("SELECT*FROM penjualan");
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="indexAdmin.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link" href="indexPetugas.php">
+                    <i class="fa-solid fa-house"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -67,18 +68,25 @@ $produk = query("SELECT*FROM penjualan");
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="dataPelanggan.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fa-solid fa-person"></i>
                     <span>Data Pelanggan</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="dataPenjualan.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fa-solid fa-chart-simple"></i>
                     <span>Data Penjualan</span></a>
             </li>
+
+            <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="dataProduk.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fa-solid fa-couch"></i>
                     <span>Data Produk</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php"">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span></a>
             </li>
 
 
@@ -111,7 +119,7 @@ $produk = query("SELECT*FROM penjualan");
                 <!-- End of Topbar -->
                 <div class="container-fluid">
                 <!-- Begin Page Content -->
-                    <table class="table table-hover align-middle">
+                    <table class="table table-hover align-middle" id="produk-table">
                         <thead>
                             <th>No.</th>
                             <th>tanggal</th>
@@ -143,7 +151,7 @@ $produk = query("SELECT*FROM penjualan");
                         
                     </table>
                     <hr>
-                    <h5>Total Penjualan : $<?= $total; ?> </h5>
+                    <h5>Total Penjualan : <b>$<?= $total; ?> </b></h5>
                     <a href="cetakPenjualan.php" class="btn btn-primary my-3">Print Penjualan</a>
                 </div>
                     
@@ -204,6 +212,17 @@ $produk = query("SELECT*FROM penjualan");
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+
+    <!-- DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- Initialize DataTables -->
+    <script>
+        $(document).ready(function () {
+            $('#produk-table').DataTable();
+        });
+    </script>
+
 
 </body>
 

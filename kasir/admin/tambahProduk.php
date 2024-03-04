@@ -3,8 +3,8 @@ include '../fungsi.php';
 
 if(isset($_POST['submit'])) {
     if(tambahProduk($_POST) > 0) {
-        echo "<script>alert('Data berhasil dikirm!!');</script>";
-        header('Location: dataProduk.php');
+        echo "<script>alert('Data berhasil ditambah!!');</script>";
+        echo "<script>window.location.href='dataProduk.php';</script>";
     }
 }
 
@@ -25,12 +25,13 @@ if(isset($_POST['submit'])) {
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 </head>
 
@@ -43,11 +44,10 @@ if(isset($_POST['submit'])) {
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                    <!-- Sidebar - Brand -->
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-text mx-3">Sofa Dreamland</div>
+            </a>
             </a>
 
 
@@ -63,24 +63,10 @@ if(isset($_POST['submit'])) {
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="dataProduk.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-couch"></i>
+
                     <span>Data Produk</span></a>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
 
         </ul>
         <!-- End of Sidebar -->
@@ -108,7 +94,7 @@ if(isset($_POST['submit'])) {
                  <form class="user" action="" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="text" class="form-control form-control-user"
-                                placeholder="Nama Produk" name="nama">
+                                placeholder="Nama Produk" name="nama">          
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control form-control-user"
@@ -119,11 +105,13 @@ if(isset($_POST['submit'])) {
                                 placeholder="Stok" name="stok">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-user"
+                            <input type="file" class="form-control form-control-user"
                                 placeholder="Foto" name="foto">
                         </div>
                         
                         <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">Submit</button>
+                    </form>
+
                 </div>
                   
             <!-- Footer -->
@@ -167,22 +155,6 @@ if(isset($_POST['submit'])) {
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 
