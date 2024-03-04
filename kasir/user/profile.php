@@ -28,6 +28,8 @@ $profile = query("SELECT*FROM pelanggan")[0];
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 </head>
 
@@ -53,7 +55,7 @@ $profile = query("SELECT*FROM pelanggan")[0];
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="indexPelanggan.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fa-solid fa-house"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -68,35 +70,26 @@ $profile = query("SELECT*FROM pelanggan")[0];
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="produk.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-couch"></i>
                     <span>Produk</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="riwayat.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-book"></i>
                     <span>Riwayat</span></a>
                 </li>
             <li class="nav-item">
                 <a class="nav-link" href="profile.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-user"></i>
                     <span>Profile</span></a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../login.php">
+                <i class="fa-solid fa-right-from-bracket""></i>
+                    <span>Logout</span></a>
+            </li>
                 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
-
+                
         </ul>
         <!-- End of Sidebar -->
 

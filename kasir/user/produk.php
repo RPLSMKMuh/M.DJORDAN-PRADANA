@@ -27,7 +27,16 @@ $produk = query("SELECT*FROM produk");
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Data tables -->
+    <link rel="stylesheet" href="../datatables/datatables.css">
+    <script src="../datatables/datatables.js"></script>
 </head>
+
+<script>
+    new DataTable('#dt');
+</script>
 
 <body id="page-top">
 
@@ -51,7 +60,7 @@ $produk = query("SELECT*FROM produk");
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="indexPelanggan.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fa-solid fa-house"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -66,19 +75,25 @@ $produk = query("SELECT*FROM produk");
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="produk.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-couch"></i>
                     <span>Produk</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="riwayat.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-book"></i>
                     <span>Riwayat</span></a>
-            </li>
+                </li>
             <li class="nav-item">
                 <a class="nav-link" href="profile.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-user"></i>
                     <span>Profile</span></a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../login.php">
+                <i class="fa-solid fa-right-from-bracket""></i>
+                    <span>Logout</span></a>
+            </li>
+                
 
 
         </ul>
@@ -102,7 +117,9 @@ $produk = query("SELECT*FROM produk");
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
+                <table id="dt"></table>
                 <div class="container-fluid">
+                    <table id="dt">
                     <div class="row row-cols-1 row-cols-md-4 g-4">
                         <?php foreach($produk as $row) : ?>
                         <div class="col mb-4">
@@ -122,6 +139,7 @@ $produk = query("SELECT*FROM produk");
                     </div>
                     <?php endforeach; ?>
                     </div>
+                    </table>
                 </div>
                   
             <!-- Footer -->
@@ -181,6 +199,7 @@ $produk = query("SELECT*FROM produk");
     <!-- Page level custom scripts -->
     <script src="../js/demo/chart-area-demo.js"></script>
     <script src="../js/demo/chart-pie-demo.js"></script>
+    
 
 </body>
 

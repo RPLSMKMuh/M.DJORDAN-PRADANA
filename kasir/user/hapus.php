@@ -9,7 +9,8 @@ mysqli_query($conn, $query);
 
 if($query) {
     echo "<script>alert('Berhasil dibatalkan!!');</script>";
-    header('Location: riwayat.php');
+    echo "<script>window.location.href='riwayat.php';</script>";
+    // header('Location: riwayat.php');
 }
 
 ?>

@@ -21,6 +21,11 @@
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <style>
+        .text-hero {
+            margin-top: 15rem;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -73,6 +78,11 @@
                 <i class="fa-solid fa-user"></i>
                     <span>Profile</span></a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../login.php">
+                <i class="fa-solid fa-right-from-bracket""></i>
+                    <span>Logout</span></a>
+            </li>
                 
         </ul>
         <!-- End of Sidebar -->
@@ -90,14 +100,11 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <div class="row">
+                    <!-- <div class="row">
                         <a href="#" class="btn btn-success"><i class="fa-brands fa-whatsapp pr-1"></i>WhatsApp</a>
                         <a href="#" class="btn ml-1" style="background-color: purple; color: white;"><i class="fa-brands fa-instagram pr-1"></i>Instagram</a>
                         <a href="#" class="btn btn-info ml-1"><i class="fa-brands fa-facebook pr-1"></i>Facebook</a>
-                    </div>
-                    <div class="logout">
-                        <a href="logout.php" class="btn btn-warning"><i class="fa-solid fa-door-open pr-1"></i></i>Logout</a>
-                    </div>
+                    </div> -->
 
                 </nav>
 
@@ -105,19 +112,26 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                  
+                    <div class="row align-items-center text-center text-hero">
+                        <div class="col-md-12">
+                            <h1>Selamat datang di Sofa Dreamland</h1>
+                            <p class="w-50 m-auto">Tingkatkan kenyamanan rumah Anda dengan koleksi sofa terbaik kami! Temukan gaya dan kualitas yang tak tertandingi dalam pilihan sofa kami yang elegan dan nyaman. Hadirkan sentuhan istimewa untuk ruang keluarga atau ruang tamu Anda dengan sofa yang dirancang untuk memberikan keselesaan maksimal dan gaya yang timeless. Jelajahi koleksi kami sekarang dan pilihlah sofa impian Anda untuk menciptakan ruang yang indah dan mengundang di rumah Anda</p>
+                            <a href="produk.php" class="btn btn-primary my-4">Produk</a>
+                        </div>
+                    </div>  
+                </div>
+                </div>
             <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
             <!-- End of Footer -->
         </div>
     </div>
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2021</span>
-            </div>
-        </div>
-    </footer>
         <!-- End of Content Wrapper -->
 
     </div>
@@ -142,7 +156,6 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
         </div>

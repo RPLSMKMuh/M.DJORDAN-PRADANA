@@ -11,7 +11,6 @@ if(isset($_POST['submit'])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,17 +26,19 @@ if(isset($_POST['submit'])) {
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
 
 </head>
 
-<body id="page-top">
 
+<body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -58,7 +59,7 @@ if(isset($_POST['submit'])) {
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="indexPelanggan.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fa-solid fa-house"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -73,34 +74,25 @@ if(isset($_POST['submit'])) {
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="produk.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-couch"></i>
                     <span>Produk</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="riwayat.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-book"></i>
                     <span>Riwayat</span></a>
-            </li>
+                </li>
             <li class="nav-item">
                 <a class="nav-link" href="profile.php">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-user"></i>
                     <span>Profile</span></a>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
+            <li class="nav-item">
+            <a class="nav-link" href="../login.php">
+                <i class="fa-solid fa-right-from-bracket""></i>
+                    <span>Logout</span></a>
+            </li>
+                
 
         </ul>
         <!-- End of Sidebar -->
@@ -124,31 +116,35 @@ if(isset($_POST['submit'])) {
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                <table class="table table-hover align-middle">
-                        <tr>
-                            <th>No.</th>
-                            <th>Tanggal</th>
-                            <th>Nama Produk</th>
-                            <th>Harga</th>
-                            <th>Qty</th>
-                            <th>Total harga</th>
-                            <th>Aksi</th>
-                        </tr>
-                        <?php $i=1; ?>
-                        <?php foreach($produk as $row) : ?>
-                        <tr> 
-                            <td><?= $i; ?></td>
-                            <td><?= $row['tglPenjualan']; ?></td>
-                            <td><?= $row['namaProduk']; ?></td>
-                            <td>$<?= $row['harga']; ?></td>
-                            <td><?= $row['jumlahProduk']; ?></td>
-                            <td>$<?= $row['totalHarga']; ?></td>
-                            <td>
-                                <a href="hapus.php?id=<?= $row['idPenjualan']; ?>" class="btn btn-danger">Batal</a>
-                            </td>
-                        </tr>
-                        <?php $i++; ?>
-                        <?php endforeach; ?>
+                    <table class="table table-hover align-middle" id="dt">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Tanggal</th>
+                                <th>Nama Produk</th>
+                                <th>Harga</th>
+                                <th>Qty</th>
+                                <th>Total harga</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i=1; ?>
+                            <?php foreach($produk as $row) : ?>
+                            <tr> 
+                                <td><?= $i; ?></td>
+                                <td><?= $row['tglPenjualan']; ?></td>
+                                <td><?= $row['namaProduk']; ?></td>
+                                <td>$<?= $row['harga']; ?></td>
+                                <td><?= $row['jumlahProduk']; ?></td>
+                                <td>$<?= $row['totalHarga']; ?></td>
+                                <td>
+                                    <a href="hapus.php?id=<?= $row['idPenjualan']; ?>" class="btn btn-danger">Batal</a>
+                                </td>
+                            </tr>
+                            <?php $i++; ?>
+                            <?php endforeach; ?>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -193,6 +189,8 @@ if(isset($_POST['submit'])) {
         </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -200,16 +198,20 @@ if(isset($_POST['submit'])) {
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
+    <!-- DataTables JavaScript -->
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+
     <!-- Custom scripts for all pages-->
     <script src="../js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#dt').DataTable();
+        });
+    </script>
 
-    <!-- Page level custom scripts -->
-    <script src="../js/demo/chart-area-demo.js"></script>
-    <script src="../js/demo/chart-pie-demo.js"></script>
-
+        
 </body>
 
 </html>
